@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+import { ComponentCycleComponent } from './component-cycle/component-cycle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatabindingComponent
+    DatabindingComponent,
+    ComponentCycleComponent
   ],
   imports: [
     BrowserModule,

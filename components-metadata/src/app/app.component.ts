@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  deleted = false;
+  childTitle = 'This is my child';
 }
