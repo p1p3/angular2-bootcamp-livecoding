@@ -1,3 +1,8 @@
 <p>
 {{title}}
 </p>
+
+<hr>
+<ng-content></ng-content>
+<p #myRef>This child element</p>
+<p>{{myRef.textContent}} again!!</p>

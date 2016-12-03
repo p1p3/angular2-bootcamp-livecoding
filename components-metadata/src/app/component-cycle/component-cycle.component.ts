@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, OnChanges,
-   DoCheck,AfterViewInit,AfterContentInit, Input } from '@angular/core';
+   DoCheck,AfterViewInit,AfterContentInit, Input, ViewChildren, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'app-component-cycle',
@@ -8,7 +8,9 @@ import { Component, OnInit, OnDestroy, OnChanges,
 })
 export class ComponentCycleComponent implements OnInit, OnDestroy, OnChanges,DoCheck,AfterViewInit,AfterContentInit {
   @Input() title:string;
- 
+  @ViewChildren("myRef") paragraph:HTMLElement;
+  @ContentChild("RootElement")  button:HTMLElement;
+
   constructor() { }
 
   ngOnInit() {
@@ -28,12 +30,11 @@ export class ComponentCycleComponent implements OnInit, OnDestroy, OnChanges,DoC
   }
 
   ngAfterContentInit(){
-    console.log("AfterContentInit", 4);
-
+    console.log("AfterContentInit", 4,this.button);
   }
 
   ngAfterViewInit(){
-    console.log("ViewInit", 5);
+    console.log("ViewInit", 5,this.button);
 
   }
 }
